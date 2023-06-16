@@ -1,0 +1,25 @@
+const int ledPin = 2;
+const  int ldrPin = 4;
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(ledPin,OUTPUT);
+  pinMode(ldrPin,INPUT);
+  // put your setup code here, to run once:
+
+}
+
+void loop() {
+  bool ledStatus =  digitalRead(ldrPin);
+  Serial.println(ledStatus);
+  if(ledStatus == true){
+    digitalWrite(ledPin,HIGH);
+    Serial.println("Dark");
+  } 
+  else{
+    digitalWrite(ledPin,LOW);
+    Serial.println("LIGHT");
+  }
+  // put your main code here, to run repeatedly:
+
+}
